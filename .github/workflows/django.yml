@@ -36,5 +36,7 @@ jobs:
       run: |
         #cd app; python manage.py test
         pytest --cov=app/api_rest/ app/api_rest/tests
+      env:
+        DJANGO_SETTINGS_MODULE: app.settings
       
         
