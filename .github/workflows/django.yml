@@ -27,8 +27,14 @@ jobs:
         pip install django
         pip install djangorestframework
         pip install django-cors-headers
+        #pip install coveralls
+        pip install pytest pytest-cov coveralls coverage
+
 
         
     - name: Run Tests
       run: |
-        cd app; python manage.py test
+        #cd app; python manage.py test
+        pytest --cov=app/app/ tests/
+      
+        
