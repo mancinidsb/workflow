@@ -28,7 +28,9 @@ jobs:
         pip install djangorestframework
         pip install django-cors-headers
         #pip install coveralls
-        pip install pytest pytest-cov coveralls coverage
+        #pip install pytest pytest-cov coveralls coverage
+        pip install coveralls==3.3.1 coverage==7.2.7
+
 
 
         
