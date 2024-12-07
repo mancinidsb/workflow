@@ -28,8 +28,8 @@ jobs:
         pip install djangorestframework
         pip install django-cors-headers
         #pip install coveralls
-        #pip install pytest pytest-cov coveralls coverage
-        pip install coveralls==3.3.1 coverage==7.2.7
+        pip install pytest pytest-cov coveralls coverage
+        #pip install coveralls==3.3.1 coverage==7.2.7
 
 
 
@@ -37,10 +37,8 @@ jobs:
     - name: Run Tests
       run: |
         #cd app; python manage.py test api_rest
-        coverage run --branch app/manage.py test api_rest;coverage xml;coveralls --service=github
+        coverage run --branch app/manage.py test api_rest
         #cd app; python manage.py runserver
         #pytest --cov=app/api_rest app/api_rest/tests
-      env:
-        DJANGO_SETTINGS_MODULE: app.settings
       
         
