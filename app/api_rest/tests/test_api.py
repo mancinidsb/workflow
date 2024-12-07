@@ -9,6 +9,7 @@ class MyModelTestCase(TestCase):
     def setUp(self):
         """Configuração inicial para testes"""
         self.my_model = MyModel.objects.create(name="Teste", value=42)
+        self.my_model2 = MyModel.objects.create(name="Teste2", value=32)
     
     def test_model_creation(self):
         """Testa se o modelo foi criado corretamente"""
@@ -18,6 +19,11 @@ class MyModelTestCase(TestCase):
     def test_model_str_method(self):
         """Testa o método __str__ do modelo"""
         self.assertEqual(str(self.my_model), "Teste")
+    
+    def test_model_creation2(self):
+            """Testa se o modelo foi criado corretamente"""
+            self.assertEqual(self.my_model2.name, "Teste2")
+            self.assertEqual(self.my_model2.value, 32)
 
 class MyViewTestCase(TestCase):
     def test_home_view_status_code(self):
