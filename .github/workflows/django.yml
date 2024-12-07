@@ -39,6 +39,8 @@ jobs:
         #cd app; python manage.py test api_rest
         #coverage run --branch app/manage.py test api_rest
         coverage run --source=app/api_rest --branch app/manage.py test api_rest
+        ls -a
+        coverage xml;coveralls --service=github
         #cd app; python manage.py runserver
         #pytest --cov=app/api_rest app/api_rest/tests
       
