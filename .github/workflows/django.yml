@@ -34,7 +34,8 @@ jobs:
         
     - name: Run Tests
       run: |
-        cd app; python manage.py test api_rest
+        #cd app; python manage.py test api_rest
+        coverage run --branch app/manage.py test api_rest;coverage xml;coveralls --service=github
         #cd app; python manage.py runserver
         #pytest --cov=app/api_rest app/api_rest/tests
       env:
